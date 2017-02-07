@@ -1,0 +1,6 @@
+[submodule "bin"]
+	path = bin
+	url = https://github.com/1247Robotics/2017-Robot-Code
+[submodule "src"]
+	path = src
+	url = ../2017-Robot-Code
