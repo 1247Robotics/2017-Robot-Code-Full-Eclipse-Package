@@ -67,4 +67,11 @@ public class OI {
 		}
 		return angle;
 	}
+	
+//----------------------------Rope Pull-----------------------------------------------
+	public boolean getClimbButton() {
+		boolean climbPressed = false;
+		climbPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_CLIMB_BUTTON_ID);
+		return climbPressed;
+	}
 }

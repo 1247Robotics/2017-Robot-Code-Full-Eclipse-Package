@@ -27,4 +27,12 @@ public class RopePull extends Subsystem{
 		talonPullFour.setRaw(1);
 		return false;
 	}
+	
+	public boolean stop () {
+		talonPullOne.setRaw(0);
+		talonPullTwo.setRaw(0);
+		talonPullThree.setRaw(0);
+		talonPullFour.setRaw(0);
+		return false;
+	}
 }

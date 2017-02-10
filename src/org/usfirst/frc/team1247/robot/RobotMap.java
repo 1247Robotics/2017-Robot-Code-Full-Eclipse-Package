@@ -33,4 +33,7 @@ public class RobotMap {
 	public static final int XBOX_ROPE_BUTTON_ID = 4;
 	public static final int XBOX_LEFT_BUTTON_ID = 3;
 	public static final int XBOX_RIGHT_BUTTON_ID = 2;
+	
+	//----------------------ROPE BUTTON----------------------------------------
+	public static final int XBOX_CLIMB_BUTTON_ID = 6;
 }

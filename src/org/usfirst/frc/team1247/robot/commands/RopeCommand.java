@@ -3,14 +3,17 @@ package org.usfirst.frc.team1247.robot.commands;
 public class RopeCommand extends BaseCommand{
 	
 	public RopeCommand() {
-		//requires(ropePull);
+		requires(ropePull);
 	}
 	
 	@Override
 	protected void execute() {
-		//throttle = Math.abs(oi.getZThrottle());
 		//System.out.println("Send Drive?");
-		//ropePull.(oi.)
+		if (oi.getClimbButton()) {
+    		ropePull.pull();
+    	} else {
+    		ropePull.stop();
+    	}
 	}
 	
 	@Override

@@ -15,7 +15,7 @@ public abstract class BaseCommand extends Command {
 	
 	public static DriveTrain driveTrain;
 	public static PixyDuino pixyDuino;
-	//public static RopePull ropePull;
+	public static RopePull ropePull;
 	
 	
 	public BaseCommand() {
@@ -48,7 +48,7 @@ public abstract class BaseCommand extends Command {
 		
 		pixyDuino = new PixyDuino();
 		
-		//ropePull = new RopePull();
+		ropePull = new RopePull();
 		
 		//displays stuff on smartdashboard
 		SmartDashboard.putData(driveTrain);

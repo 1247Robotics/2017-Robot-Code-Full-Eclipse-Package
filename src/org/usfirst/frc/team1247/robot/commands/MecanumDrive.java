@@ -6,7 +6,7 @@ public class MecanumDrive extends BaseCommand{
 	public MecanumDrive() {
 		System.out.println("Mecanum initialization");
 		//DUNNO IF WE NEED THROTTLE
-		throttle = .25;
+		throttle = 1;
 		
 		requires(driveTrain);
 	}
@@ -15,9 +15,9 @@ public class MecanumDrive extends BaseCommand{
 	protected void execute() {
 		//throttle = Math.abs(oi.getZThrottle());
 		//System.out.println("Send Drive?");
-		driveTrain.mecanumDrive(oi.getLeftXAxis()*throttle,
-								oi.getLeftYAxis()*throttle,
-								oi.getRightXAxis()*throttle,
+		driveTrain.mecanumDrive(Math.pow(oi.getLeftXAxis(), 3)*throttle,
+								Math.pow(oi.getLeftYAxis(), 3)*throttle,
+								Math.pow(oi.getRightXAxis(), 3)*throttle,
 								oi.getGearDirectionButton());
 	}
 	
