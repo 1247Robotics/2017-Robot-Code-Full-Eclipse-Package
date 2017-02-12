@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1247.robot.subsystems;
 
 import org.usfirst.frc.team1247.robot.RobotMap;
+import org.usfirst.frc.team1247.robot.commands.ShooterCommand;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -13,7 +14,7 @@ public class Shooter extends Subsystem{
 	}
 	@Override
 	public void initDefaultCommand() {
-		//setDefaultCommand(new RopeCommand());
+		setDefaultCommand(new ShooterCommand());
 	}
 	
 	public boolean shoot() {

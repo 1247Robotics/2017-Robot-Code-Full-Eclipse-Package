@@ -124,7 +124,7 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		//System.out.println("Do I has teleop periodic even?");
 		
-		oi.setDirection();
+		
 	}
 	
 	 public void operatorControl() {

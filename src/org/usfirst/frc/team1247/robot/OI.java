@@ -61,7 +61,7 @@ public class OI {
 			direction = Mode.RIGHT;
 		}
 		//System.out.println(direction);
-	} //called in Robot.java!!!!
+	} //called in MecanumDrive.java!!!!
 	
 	public int getAngle() {
 		switch(direction){
@@ -132,9 +132,15 @@ public class OI {
 //----------------------------Action-----------------------------------------------
 
 	public boolean getActionButton() {
-		boolean climbPressed = false;
-		climbPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_ACTION_BUTTON_ID);
-		return climbPressed;
+		boolean pressed = false;
+		pressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_ACTION_BUTTON_ID);
+		return pressed;
+	}
+	
+	public boolean getReverseActionButton(){
+		boolean pressed = false;
+		pressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_REVERSE_ACTION_BUTTON_ID);
+		return pressed;
 	}
 
 }

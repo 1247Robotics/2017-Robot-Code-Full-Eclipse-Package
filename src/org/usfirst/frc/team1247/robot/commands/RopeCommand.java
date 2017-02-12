@@ -3,19 +3,23 @@ package org.usfirst.frc.team1247.robot.commands;
 import org.usfirst.frc.team1247.robot.utilities.Mode;
 
 public class RopeCommand extends BaseCommand{
+	double throttle;
 	
 	public RopeCommand() {
 		requires(ropePull);
+		throttle = 1;
 	}
 	
 	@Override
 	protected void execute() {
 		//System.out.println("Send Drive?");
 		if (oi.direction == Mode.ROPE){
-			if (oi.getActionButton()) {
-	    		ropePull.pull();
-	    	} else {
+	    	if (oi.getActionButton()){
 	    		ropePull.stop();
+	    	} else if (oi.getReverseActionButton()){
+	    		ropePull.reverse(throttle);
+	    	} else {
+	    		ropePull.pull(throttle);
 	    	}
 		}
 	}

@@ -15,6 +15,7 @@ public class MecanumDrive extends BaseCommand{
 	protected void execute() {
 		//throttle = Math.abs(oi.getZThrottle());
 		//System.out.println("Send Drive?");
+		oi.setDirection();
 		driveTrain.mecanumDrive(Math.pow(oi.getLeftXAxis(), 3)*throttle,
 								Math.pow(oi.getLeftYAxis(), 3)*throttle,
 								Math.pow(oi.getRightXAxis(), 3)*throttle,

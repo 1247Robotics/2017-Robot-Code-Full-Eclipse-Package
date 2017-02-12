@@ -14,17 +14,28 @@ public class NeckServoCommand extends BaseCommand {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	switch(oi.direction){
-    	case GEAR:
-    		
-    	}
+
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
-    	
-    	
+    	switch(oi.direction){
+    	case GEAR:
+    		//neckServo.setAngle();
+    		break;
+    	case ROPE:
+    		//neckServo.setAngle();
+    		break;
+    	case SHOOTER:
+    		//neckServo.setAngle();
+    		break;
+    	case RIGHT:
+    		//neckServo.setAngle();
+    		break;
+    	default:
+    		//neckServo.setAngle();
+    		break;
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

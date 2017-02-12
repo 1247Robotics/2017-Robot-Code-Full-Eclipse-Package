@@ -2,6 +2,7 @@ package org.usfirst.frc.team1247.robot.subsystems;
 
 import org.usfirst.frc.team1247.robot.RobotMap;
 //import org.usfirst.frc.team1247.robot.commands.RopeCommand;
+import org.usfirst.frc.team1247.robot.commands.RopeCommand;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,18 +16,24 @@ public class RopePull extends Subsystem{
 	}
 	@Override
 	public void initDefaultCommand() {
-		//setDefaultCommand(new RopeCommand());
+		setDefaultCommand(new RopeCommand());
 	}
 	
-	public boolean pull () {
-		talonPullOne.setRaw(1);
-		talonPullTwo.setRaw(1);
+	public boolean pull (double speed) {
+		talonPullOne.setSpeed(-speed);
+		talonPullTwo.setSpeed(speed);
+		return false;
+	}
+	
+	public boolean reverse(double speed){
+		talonPullOne.setSpeed(speed);
+		talonPullTwo.setSpeed(-speed);
 		return false;
 	}
 	
 	public boolean stop () {
-		talonPullOne.setRaw(0);
-		talonPullTwo.setRaw(0);
+		talonPullOne.setSpeed(0);
+		talonPullTwo.setSpeed(0);
 		return false;
 	}
 }
