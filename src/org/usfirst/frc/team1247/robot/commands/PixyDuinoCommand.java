@@ -1,12 +1,8 @@
 package org.usfirst.frc.team1247.robot.commands;
 
 
-import edu.wpi.first.wpilibj.Sendable;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
 import edu.wpi.first.wpilibj.tables.ITable;
-
-import org.usfirst.frc.team1247.robot.subsystems.PixyDuino;
 
 /**
  *
@@ -30,10 +26,13 @@ public class PixyDuinoCommand extends BaseCommand implements LiveWindowSendable 
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.print("Left: ");
-    	System.out.print(pixyDuino.getTurnLeft());
-    	System.out.print(", Right: ");
-    	System.out.println(pixyDuino.getTurnRight());
+    	//System.out.print("Left: ");
+    	//System.out.print(pixyDuino.getTurnLeft());
+    	//System.out.print(", Right: ");
+    	//System.out.println(pixyDuino.getTurnRight());
+    	
+    	pixyDuino.setMode(oi.getHighBit(), oi.getLowBit());
+    	
     	if (pixyDuino.getTurnLeft() && pixyDuino.getTurnRight()){
     		direction = "straight";
     	} else if (pixyDuino.getTurnLeft()){

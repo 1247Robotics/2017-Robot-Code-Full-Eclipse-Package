@@ -1,5 +1,7 @@
 package org.usfirst.frc.team1247.robot.commands;
 
+import org.usfirst.frc.team1247.robot.utilities.Mode;
+
 public class RopeCommand extends BaseCommand{
 	
 	public RopeCommand() {
@@ -9,11 +11,13 @@ public class RopeCommand extends BaseCommand{
 	@Override
 	protected void execute() {
 		//System.out.println("Send Drive?");
-		if (oi.getClimbButton()) {
-    		ropePull.pull();
-    	} else {
-    		ropePull.stop();
-    	}
+		if (oi.direction == Mode.ROPE){
+			if (oi.getActionButton()) {
+	    		ropePull.pull();
+	    	} else {
+	    		ropePull.stop();
+	    	}
+		}
 	}
 	
 	@Override

@@ -3,7 +3,7 @@ package org.usfirst.frc.team1247.robot;
 import edu.wpi.first.wpilibj.Joystick;
 
 import org.usfirst.frc.team1247.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team1247.robot.utilities.ForwardDirection;
+import org.usfirst.frc.team1247.robot.utilities.Mode;
 
 
 /**
@@ -12,16 +12,18 @@ import org.usfirst.frc.team1247.robot.utilities.ForwardDirection;
  */
 public class OI {
 	
-	//public static ForwardDirection direction;
+	public Mode direction;
 	
 	Joystick xboxDriveJoystick;
 	int angle = 0;
+	
 	
 	
 //------------------------------Controller Type--------------------------------------
 	public OI () {
 		System.out.println("I can has OI!");
 		xboxDriveJoystick = new Joystick(RobotMap.XBOX_DRIVE_ID);
+		direction = Mode.GEAR;
 	}
 
 	
@@ -47,31 +49,92 @@ public class OI {
 	}
 	
 //-----------------------------Direction----------------------------------------------
-	
-	public int getGearDirectionButton() {
-		boolean gearPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_GEAR_BUTTON_ID);
-		boolean ropePressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_ROPE_BUTTON_ID);
-		boolean leftPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_LEFT_BUTTON_ID);
-		boolean rightPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_RIGHT_BUTTON_ID);
 		
-		if(gearPressed){
+	public void setDirection(){
+		if (xboxDriveJoystick.getRawButton(RobotMap.XBOX_GEAR_BUTTON_ID)){
+			direction = Mode.GEAR;
+		} else if (xboxDriveJoystick.getRawButton(RobotMap.XBOX_ROPE_BUTTON_ID)){
+			direction = Mode.ROPE;
+		} else if (xboxDriveJoystick.getRawButton(RobotMap.XBOX_LEFT_BUTTON_ID)){
+			direction = Mode.SHOOTER;
+		} else if (xboxDriveJoystick.getRawButton(RobotMap.XBOX_RIGHT_BUTTON_ID)){
+			direction = Mode.RIGHT;
+		}
+		//System.out.println(direction);
+	} //called in Robot.java!!!!
+	
+	public int getAngle() {
+		switch(direction){
+		case GEAR:
 			angle = 0;
-		}else if (ropePressed){
+			break;
+		case ROPE:
 			angle = 180;
-		}else if (leftPressed){
+			break;
+		case SHOOTER:
 			angle = 270;
-		}else if (rightPressed){
+			break;
+		case RIGHT:
 			angle = 90;
-		}else{
-			//keep angle the same
+			break;
+		default:
+			angle = 0;
+			break;
 		}
 		return angle;
 	}
 	
-//----------------------------Rope Pull-----------------------------------------------
-	public boolean getClimbButton() {
+	public boolean getHighBit(){
+		boolean value = false;
+		switch(direction){
+		case GEAR:
+			value = false;
+			break;
+		case ROPE:
+			value = false;
+			break;
+		case SHOOTER:
+			value = true;
+			break;
+		case RIGHT:
+			value = true;
+			break;
+		default:
+			value = false;
+			break;
+		}
+		return value;
+	}
+	
+	public boolean getLowBit(){
+		boolean value = false;
+		switch(direction){
+		case GEAR:
+			value = false;
+			break;
+		case ROPE:
+			value = true;
+			break;
+		case SHOOTER:
+			value = false;
+			break;
+		case RIGHT:
+			value = true;
+			break;
+		default:
+			value = false;
+			break;
+		}
+		return value;
+	}
+	
+	
+//----------------------------Action-----------------------------------------------
+
+	public boolean getActionButton() {
 		boolean climbPressed = false;
-		climbPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_CLIMB_BUTTON_ID);
+		climbPressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_ACTION_BUTTON_ID);
 		return climbPressed;
 	}
+
 }

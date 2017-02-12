@@ -14,10 +14,9 @@ public class RobotMap {
 	public static final int TALON_CHANNEL_REAR_LEFT = 1;
 	public static final int TALON_CHANNEL_FRONT_RIGHT = 2; 
 	public static final int TALON_CHANNEL_REAR_RIGHT = 3; 
-	//public static final int TALON_CHANNEL_ROPE_ONE = ?;
-	//public static final int TALON_CHANNEL_ROPE_TWO = ?;
-	//public static final int TALON_CHANNEL_ROPE_THREE = ?;
-	//public static final int TALON_CHANNEL_ROPE_FOUR = ?;
+	public static final int TALON_CHANNEL_ROPE_ONE = 4;
+	public static final int TALON_CHANNEL_ROPE_TWO = 5;
+	public static final int TALON_CHANNEL_SHOOTER = 6;
 	
 	//-----------------------DRIVE---------------------------------------------
 	public static final int XBOX_LEFT_XAXIS_ID = 0;
@@ -28,12 +27,15 @@ public class RobotMap {
 	public static final int DIGITAL_INPUT_TURN_LEFT_ID = 10;
 	public static final int DIGITAL_INPUT_TURN_RIGHT_ID = 9;
 	
+	public static final int DIGITAL_OUTPUT_MODE_HIGH_BIT_ID = 8;
+	public static final int DIGITAL_OUTPUT_MODE_LOW_BIT_ID = 7;
+	
 	//----------------------FORWARD DIRECTION----------------------------------
 	public static final int XBOX_GEAR_BUTTON_ID = 1;
 	public static final int XBOX_ROPE_BUTTON_ID = 4;
 	public static final int XBOX_LEFT_BUTTON_ID = 3;
 	public static final int XBOX_RIGHT_BUTTON_ID = 2;
 	
-	//----------------------ROPE BUTTON----------------------------------------
-	public static final int XBOX_CLIMB_BUTTON_ID = 6;
+	//----------------------ROPE/SHOOT BUTTON----------------------------------------
+	public static final int XBOX_ACTION_BUTTON_ID = 6;
 }

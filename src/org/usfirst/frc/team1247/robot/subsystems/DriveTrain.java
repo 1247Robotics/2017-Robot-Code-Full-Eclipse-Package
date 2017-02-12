@@ -38,6 +38,7 @@ public class DriveTrain extends Subsystem{
 	
 	public void mecanumDrive(double leftx, double lefty, double rightx, int angle){
 		drive.mecanumDrive_Cartesian(leftx, lefty, rightx, angle);
+		//System.out.println(angle);
 		///System.out.println("DRIVE!");
 		//drive.mecanumDrive_Polar(leftx, lefty, rightx);
 	}

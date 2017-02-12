@@ -1,24 +1,23 @@
 package org.usfirst.frc.team1247.robot.commands;
 
-public class MecanumDrive extends BaseCommand{
-	double throttle;
+import org.usfirst.frc.team1247.robot.utilities.Mode;
+
+public class ShooterCommand extends BaseCommand{
 	
-	public MecanumDrive() {
-		System.out.println("Mecanum initialization");
-		//DUNNO IF WE NEED THROTTLE
-		throttle = 1;
-		
-		requires(driveTrain);
+	public ShooterCommand() {
+		requires(shooter);
 	}
 	
 	@Override
 	protected void execute() {
-		//throttle = Math.abs(oi.getZThrottle());
 		//System.out.println("Send Drive?");
-		driveTrain.mecanumDrive(Math.pow(oi.getLeftXAxis(), 3)*throttle,
-								Math.pow(oi.getLeftYAxis(), 3)*throttle,
-								Math.pow(oi.getRightXAxis(), 3)*throttle,
-								oi.getAngle());
+		if (oi.direction == Mode.SHOOTER){
+			if (oi.getActionButton()) {
+	    		shooter.shoot();
+	    	} else {
+	    		shooter.shootStop();
+	    	}
+		}
 	}
 	
 	@Override
