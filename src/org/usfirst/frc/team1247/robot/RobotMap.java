@@ -17,6 +17,7 @@ public class RobotMap {
 	public static final int TALON_CHANNEL_ROPE_ONE = 4;
 	public static final int TALON_CHANNEL_ROPE_TWO = 5;
 	public static final int TALON_CHANNEL_SHOOTER = 6; //find actual channel
+	public static final int TALON_CHANNEL_LIGHT = 7; //find actual channel
 	
 	//----------------------SERVO----------------------------------------------
 	public static final int SERVO_CHANNEL_NECK = 7; //find actual channel

@@ -1,17 +1,16 @@
 package org.usfirst.frc.team1247.robot;
 
-import org.usfirst.frc.team1247.robot.utilities.*;
+
 import org.usfirst.frc.team1247.robot.commands.AutonomousMode;
 import org.usfirst.frc.team1247.robot.commands.BaseCommand;
 import org.usfirst.frc.team1247.robot.commands.PixyDuinoCommand;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 
 /**

@@ -2,7 +2,6 @@ package org.usfirst.frc.team1247.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-import org.usfirst.frc.team1247.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team1247.robot.utilities.Mode;
 
 
