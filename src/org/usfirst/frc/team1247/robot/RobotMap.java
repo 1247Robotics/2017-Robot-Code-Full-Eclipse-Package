@@ -16,11 +16,12 @@ public class RobotMap {
 	public static final int TALON_CHANNEL_REAR_RIGHT = 3; 
 	public static final int TALON_CHANNEL_ROPE_ONE = 4;
 	public static final int TALON_CHANNEL_ROPE_TWO = 5;
-	public static final int TALON_CHANNEL_SHOOTER = 6; //find actual channel
-	public static final int TALON_CHANNEL_LIGHT = 7; //find actual channel
+	public static final int CAN_TALON_CHANNEL_SHOOTER = 0;
+	public static final int CAN_TALON_CHANNEL_LIGHT = 1;
 	
-	//----------------------SERVO----------------------------------------------
-	public static final int SERVO_CHANNEL_NECK = 7; //find actual channel
+	//----------------------SERVO AND SOLENOiD----------------------------------------------
+	public static final int SERVO_CHANNEL_NECK = 9;
+	public static final int GEAR_MOVER_SOLENOID_CHANNEL = 3;
 	
 	//-----------------------DRIVE---------------------------------------------
 	public static final int XBOX_LEFT_XAXIS_ID = 0;

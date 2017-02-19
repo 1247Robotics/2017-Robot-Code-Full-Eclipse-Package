@@ -59,7 +59,7 @@ public class OI {
 		} else if (xboxDriveJoystick.getRawButton(RobotMap.XBOX_RIGHT_BUTTON_ID)){
 			direction = Mode.RIGHT;
 		}
-		//System.out.println(direction);
+		System.out.println(direction);
 	} //called in MecanumDrive.java!!!!
 	
 	public int getAngle() {

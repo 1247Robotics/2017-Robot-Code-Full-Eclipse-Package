@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1247.robot.commands;
 
+import org.usfirst.frc.team1247.robot.RobotMap;
 
 /**
  *
@@ -20,10 +21,10 @@ public class NeckServoCommand extends BaseCommand {
     protected void execute() {
     	switch(oi.direction){
     	case GEAR:
-    		//neckServo.setAngle();
+    		neckServo.setAngle(RobotMap.SERVO_ANGLE_GEAR_ID);
     		break;
     	case ROPE:
-    		//neckServo.setAngle();
+    		neckServo.setAngle(RobotMap.SERVO_ANGLE_ROPE_ID);
     		break;
     	case SHOOTER:
     		//neckServo.setAngle();
@@ -32,7 +33,7 @@ public class NeckServoCommand extends BaseCommand {
     		//neckServo.setAngle();
     		break;
     	default:
-    		//neckServo.setAngle();
+    		neckServo.setAngle(RobotMap.SERVO_ANGLE_GEAR_ID);
     		break;
     	}
     }

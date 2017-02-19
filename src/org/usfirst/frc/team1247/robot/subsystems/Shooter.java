@@ -3,14 +3,16 @@ package org.usfirst.frc.team1247.robot.subsystems;
 import org.usfirst.frc.team1247.robot.RobotMap;
 import org.usfirst.frc.team1247.robot.commands.ShooterCommand;
 
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Shooter extends Subsystem{
-	private Talon talonShoot;
+	private CANTalon talonShoot;
 	
 	public Shooter() {
-		talonShoot = new Talon(RobotMap.TALON_CHANNEL_SHOOTER);
+		talonShoot = new CANTalon(RobotMap.CAN_TALON_CHANNEL_SHOOTER);
 	}
 	@Override
 	public void initDefaultCommand() {
@@ -18,12 +20,12 @@ public class Shooter extends Subsystem{
 	}
 	
 	public boolean shoot() {
-		talonShoot.setRaw(1);
+		talonShoot.set(1);
 		return false;
 	}
 	
 	public boolean shootStop() {
-		talonShoot.setRaw(0);
+		talonShoot.set(0);
 		return false;
 	}
 
