@@ -5,11 +5,13 @@ import org.usfirst.frc.team1247.robot.commands.AutonomousMode;
 import org.usfirst.frc.team1247.robot.commands.BaseCommand;
 import org.usfirst.frc.team1247.robot.commands.PixyDuinoCommand;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 
@@ -43,7 +45,7 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("My Auto", customAuto);
 		//SmartDashboard.putData("Auto choices", chooser);		
 		System.out.println("Robot Init!");
-		
+		CameraServer.getInstance().startAutomaticCapture();
 		oi = new OI();
 		BaseCommand.init();
 		autonomousMode = new AutonomousMode();
@@ -58,21 +60,6 @@ public class Robot extends IterativeRobot {
 	
 	@Override
 	public void robotPeriodic(){
-		/*
-		System.out.println(imu.getAngleX());
-        System.out.println(imu.getAngleY());
-        System.out.println(imu.getAngleZ());
-		SmartDashboard.putData("ADIS", imu);
-        SmartDashboard.putNumber("AngleX", imu.getAngleX());
-        SmartDashboard.getNumber("AngleY", imu.getAngleY());
-        SmartDashboard.getNumber("AngleZ", imu.getAngleZ());
-        SmartDashboard.putNumber("AccelX", imu.getAccelX());
-        SmartDashboard.putNumber("AccelY", imu.getAccelY());
-        SmartDashboard.putNumber("AccelZ", imu.getAccelZ());
-        SmartDashboard.getNumber("MagX", imu.getMagX());
-        SmartDashboard.getNumber("MagY", imu.getMagY());
-        SmartDashboard.getNumber("MagZ", imu.getMagZ());
-        */
         //System.out.println(pixy.getDirection());
         //SmartDashboard.putString("direction", pixy.getDirection());
         Timer.delay(0.005);		// wait for a motor update time
@@ -123,15 +110,27 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		//System.out.println("Do I has teleop periodic even?");
 		
-		
 	}
 	
 	 public void operatorControl() {
 	        while (isOperatorControl() && isEnabled()) {
 	            //SmartDashboard.putData("IMU", imu);
 	            Timer.delay(0.005);		// wait for a motor update time
-	        }
-	    }
+	        
+		        switch(oi.direction){
+				case GEAR:
+					SmartDashboard.putString("Direction", "Gear");
+				case ROPE:
+					SmartDashboard.putString("Direction", "Rope");
+				case SHOOTER:
+					SmartDashboard.putString("Direction", "Shooter");
+				case RIGHT:
+					SmartDashboard.putString("Direction", "Right");
+				default:
+					SmartDashboard.putString("Direction", "Gear Default"); //HOW THE FUCK DO YOU SMART DASHBOARD??????
+		        }
+			}
+	  }
 
 	/**
 	 * This function is called periodically during test mode

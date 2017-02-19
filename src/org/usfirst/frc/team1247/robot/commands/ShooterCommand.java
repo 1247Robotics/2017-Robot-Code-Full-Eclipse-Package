@@ -12,11 +12,14 @@ public class ShooterCommand extends BaseCommand{
 	protected void execute() {
 		//System.out.println("Send Drive?");
 		if (oi.direction == Mode.SHOOTER){
+			shooter.shoot();
 			if (oi.getActionButton()) {
-	    		shooter.shoot();
+	    		
 	    	} else {
-	    		shooter.shootStop();
+	    		
 	    	}
+		} else{
+			shooter.shootStop();
 		}
 	}
 	

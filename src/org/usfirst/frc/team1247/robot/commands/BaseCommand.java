@@ -2,6 +2,7 @@ package org.usfirst.frc.team1247.robot.commands;
 
 import org.usfirst.frc.team1247.robot.OI;
 import org.usfirst.frc.team1247.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team1247.robot.subsystems.GearMover;
 import org.usfirst.frc.team1247.robot.subsystems.Light;
 import org.usfirst.frc.team1247.robot.subsystems.PixyDuino;
 import org.usfirst.frc.team1247.robot.subsystems.RopePull;
@@ -22,6 +23,7 @@ public abstract class BaseCommand extends Command {
 	public static Shooter shooter;
 	public static NeckServo neckServo;
 	public static Light light;
+	public static GearMover mover;
 	
 	public BaseCommand() {
 		super();
@@ -61,7 +63,8 @@ public abstract class BaseCommand extends Command {
 		
 		light = new Light();
 		
+		mover = new GearMover();
+		
 		//displays stuff on smartdashboard
-		SmartDashboard.putData(driveTrain);
 	}
 }

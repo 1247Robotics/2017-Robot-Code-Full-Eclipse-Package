@@ -3,14 +3,16 @@ package org.usfirst.frc.team1247.robot.subsystems;
 import org.usfirst.frc.team1247.robot.RobotMap;
 import org.usfirst.frc.team1247.robot.commands.LightCommand;
 
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Light extends Subsystem{
-	private Talon lightTalon;
+	private CANTalon lightTalon;
 	
 	public Light(){
-		lightTalon = new Talon(RobotMap.TALON_CHANNEL_LIGHT);
+		lightTalon = new CANTalon(RobotMap.CAN_TALON_CHANNEL_LIGHT);
 	}
 	
 	public void initDefaultCommand() {
@@ -18,7 +20,7 @@ public class Light extends Subsystem{
 	}
 	
 	public void light(double brightness){
-		lightTalon.setSpeed(brightness);
+		lightTalon.set(brightness);
 	}
 	
 }
