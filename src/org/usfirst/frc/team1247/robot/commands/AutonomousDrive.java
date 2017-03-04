@@ -44,12 +44,13 @@ public class AutonomousDrive extends BaseCommand{
 
 	@Override
 	protected void execute() {
+		System.out.println(oi.getAngle());
 		if (!isDriving) {
 			timer.start();
 			isDriving = true;
 		}
 		
-		if (timer.get() < duration) driveTrain.mecanumDrive(0, 0, 1, 0);
+		if (timer.get() < duration) driveTrain.mecanumDrive(0, 1, 0, oi.getAngle());
 		else isFinished = true;
 	}
 

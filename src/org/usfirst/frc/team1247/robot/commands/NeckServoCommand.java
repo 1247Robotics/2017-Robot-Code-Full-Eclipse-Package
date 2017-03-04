@@ -14,26 +14,26 @@ public class NeckServoCommand extends BaseCommand {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-
+    	super.initialize();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	switch(oi.direction){
     	case GEAR:
-    		neckServo.setAngle(RobotMap.SERVO_ANGLE_GEAR_ID);
+    		neckServo.setAngle(20, 135);
     		break;
     	case ROPE:
-    		neckServo.setAngle(RobotMap.SERVO_ANGLE_ROPE_ID);
+    		neckServo.setAngle(160, 135);
     		break;
     	case SHOOTER:
-    		//neckServo.setAngle();
+    		neckServo.setAngle(90, 120);
     		break;
     	case RIGHT:
-    		//neckServo.setAngle();
+    		neckServo.setAngle(270, 135);
     		break;
     	default:
-    		neckServo.setAngle(RobotMap.SERVO_ANGLE_GEAR_ID);
+    		neckServo.setAngle(20, 135);
     		break;
     	}
     }

@@ -20,6 +20,9 @@ public class MecanumDrive extends BaseCommand{
 								Math.pow(oi.getLeftYAxis(), 3)*throttle,
 								Math.pow(oi.getRightXAxis(), 3)*throttle,
 								oi.getAngle());
+		if (oi.getAgitateButton()){
+			driveTrain.agitateDrive();
+		}
 	}
 	
 	@Override

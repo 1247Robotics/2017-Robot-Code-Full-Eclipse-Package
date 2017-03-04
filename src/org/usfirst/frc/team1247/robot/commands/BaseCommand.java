@@ -64,7 +64,7 @@ public abstract class BaseCommand extends Command {
 		light = new Light();
 		
 		mover = new GearMover();
-		
+				
 		//displays stuff on smartdashboard
 	}
 }

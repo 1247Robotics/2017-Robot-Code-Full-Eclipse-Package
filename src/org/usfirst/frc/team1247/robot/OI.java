@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1247.robot;
 
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.Joystick;
 
 import org.usfirst.frc.team1247.robot.utilities.Mode;
@@ -12,6 +13,8 @@ import org.usfirst.frc.team1247.robot.utilities.Mode;
 public class OI {
 	
 	public Mode direction;
+	public RumbleType kLeftRumble;
+	public RumbleType kRightRumble;
 	
 	Joystick xboxDriveJoystick;
 	int angle = 0;
@@ -139,6 +142,16 @@ public class OI {
 	public boolean getReverseActionButton(){
 		boolean pressed = false;
 		pressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_REVERSE_ACTION_BUTTON_ID);
+		return pressed;
+	}
+	
+	public boolean getAgitateButton(){
+		boolean pressed = false;
+		pressed = xboxDriveJoystick.getRawButton(RobotMap.XBOX_AGITATE_BUTTON_ID);
+		if (pressed) {
+			xboxDriveJoystick.setRumble(kLeftRumble, 1);
+			xboxDriveJoystick.setRumble(kRightRumble, 1);
+		}
 		return pressed;
 	}
 

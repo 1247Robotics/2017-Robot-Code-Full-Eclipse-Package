@@ -18,6 +18,8 @@ public class GearMoverCommand extends BaseCommand{
 			} else {
 				mover.moveUp();
 			}
+		} else {
+			mover.moveUp();
 		}
 	}
 	

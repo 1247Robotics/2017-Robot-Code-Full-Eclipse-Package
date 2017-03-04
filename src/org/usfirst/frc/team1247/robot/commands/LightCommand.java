@@ -10,10 +10,10 @@ public class LightCommand extends BaseCommand{
 		//System.out.println("Send Drive?");
 		switch(oi.direction){
 		case GEAR:
-			light.light(.5);//set these variables later!!!!
+			light.light(.25);//set these variables later!!!!
 			break;
 		case ROPE:
-			light.light(.75);
+			light.light(.1);
 			break;
 		case SHOOTER:
 			light.light(1);
@@ -22,7 +22,7 @@ public class LightCommand extends BaseCommand{
 			light.light(.25);
 			break;
 		default:
-			light.light(.5);
+			light.light(.25);
 			break;
 		}
 	}

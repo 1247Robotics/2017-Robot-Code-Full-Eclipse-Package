@@ -21,6 +21,8 @@ public class RopeCommand extends BaseCommand{
 	    	} else {
 	    		ropePull.pull(throttle);
 	    	}
+		} else {
+			ropePull.stop();
 		}
 	}
 	

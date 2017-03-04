@@ -7,6 +7,7 @@ import org.usfirst.frc.team1247.robot.commands.PixyDuinoCommand;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -32,7 +33,8 @@ public class Robot extends IterativeRobot {
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
-
+	//Sendable mode = new Sendable();
+	
 	
 
 	/**
@@ -43,6 +45,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		chooser.addDefault("Default Auto", defaultAuto);
 		chooser.addObject("My Auto", customAuto);
+		
+		//mode.
 		//SmartDashboard.putData("Auto choices", chooser);		
 		System.out.println("Robot Init!");
 		CameraServer.getInstance().startAutomaticCapture();
@@ -61,7 +65,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotPeriodic(){
         //System.out.println(pixy.getDirection());
-        //SmartDashboard.putString("direction", pixy.getDirection());
+        //SmartDashboard.putString("direction", io.getDirection());
         Timer.delay(0.005);		// wait for a motor update time
 	}
 
@@ -117,7 +121,7 @@ public class Robot extends IterativeRobot {
 	            //SmartDashboard.putData("IMU", imu);
 	            Timer.delay(0.005);		// wait for a motor update time
 	        
-		        switch(oi.direction){
+		        /*switch(oi.direction){
 				case GEAR:
 					SmartDashboard.putString("Direction", "Gear");
 				case ROPE:
@@ -128,7 +132,7 @@ public class Robot extends IterativeRobot {
 					SmartDashboard.putString("Direction", "Right");
 				default:
 					SmartDashboard.putString("Direction", "Gear Default"); //HOW THE FUCK DO YOU SMART DASHBOARD??????
-		        }
+		        }*/
 			}
 	  }
 

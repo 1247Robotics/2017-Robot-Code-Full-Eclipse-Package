@@ -42,4 +42,11 @@ public class DriveTrain extends Subsystem{
 		///System.out.println("DRIVE!");
 		//drive.mecanumDrive_Polar(leftx, lefty, rightx);
 	}
+	
+	public void agitateDrive(){
+		talonFrontLeft.set(-1);
+		talonRearLeft.set(1);
+		talonFrontRight.set(-1);
+		talonRearRight.set(1);
+	}
 }

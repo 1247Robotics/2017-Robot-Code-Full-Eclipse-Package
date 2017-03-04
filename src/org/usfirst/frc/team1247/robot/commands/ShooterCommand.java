@@ -14,12 +14,13 @@ public class ShooterCommand extends BaseCommand{
 		if (oi.direction == Mode.SHOOTER){
 			shooter.shoot();
 			if (oi.getActionButton()) {
-	    		
+	    		shooter.moveUp();
 	    	} else {
-	    		
+	    		shooter.moveDown();
 	    	}
-		} else{
+		} else {
 			shooter.shootStop();
+			System.out.println("No moore shooty shooot");
 		}
 	}
 	
