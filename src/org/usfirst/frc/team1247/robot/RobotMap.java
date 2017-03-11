@@ -23,16 +23,14 @@ public class RobotMap {
 	public static final int TILTY_SERVO_CHANNEL = 7;
 	
 	//----------------------PIXYDUINO------------------------------------------
-	public static final int DIGITAL_INPUT_TURN_LEFT_ID = 15;
-	public static final int DIGITAL_INPUT_TURN_RIGHT_ID = 14;
+	public static final int DIGITAL_INPUT_TURN_LEFT_ID = 9;
+	public static final int DIGITAL_INPUT_TURN_RIGHT_ID = 8;
 	
 	public static final int DIGITAL_OUTPUT_MODE_HIGH_BIT_ID = 13;
 	public static final int DIGITAL_OUTPUT_MODE_LOW_BIT_ID = 12;
 	
 //--------------------PCM----------------------------------------	
-	// ---------------------SOLENOID-------------------------------------------
-	public static final int GEAR_MOVER_SOLENOID_CHANNEL = 3;
-	public static final int SHOOTER_SOLENOID_CHANNEL = 2;
+
 	
 //--------------------CAN----------------------------------------	
 	//---------------------CAN BUS---------------------------------------------

@@ -2,15 +2,13 @@ package org.usfirst.frc.team1247.robot.commands;
 
 import org.usfirst.frc.team1247.robot.OI;
 import org.usfirst.frc.team1247.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team1247.robot.subsystems.GearMover;
 import org.usfirst.frc.team1247.robot.subsystems.Light;
 import org.usfirst.frc.team1247.robot.subsystems.PixyDuino;
 import org.usfirst.frc.team1247.robot.subsystems.RopePull;
-import org.usfirst.frc.team1247.robot.subsystems.Shooter;
+import org.usfirst.frc.team1247.robot.utilities.ADIS16448_IMU;
 import org.usfirst.frc.team1247.robot.subsystems.NeckServo;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public abstract class BaseCommand extends Command {
 	public static OI oi;
@@ -20,10 +18,10 @@ public abstract class BaseCommand extends Command {
 	public static DriveTrain driveTrain;
 	public static PixyDuino pixyDuino;
 	public static RopePull ropePull;
-	public static Shooter shooter;
 	public static NeckServo neckServo;
 	public static Light light;
-	public static GearMover mover;
+	
+	public static ADIS16448_IMU imu;
 	
 	public BaseCommand() {
 		super();
@@ -57,13 +55,13 @@ public abstract class BaseCommand extends Command {
 		
 		ropePull = new RopePull();
 		
-		shooter = new Shooter();
-		
 		neckServo = new NeckServo();
 		
 		light = new Light();
 		
-		mover = new GearMover();
+		imu = new ADIS16448_IMU();
+		imu.calibrate();
+		
 				
 		//displays stuff on smartdashboard
 	}

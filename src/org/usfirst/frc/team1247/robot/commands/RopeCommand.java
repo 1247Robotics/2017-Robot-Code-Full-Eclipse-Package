@@ -23,6 +23,7 @@ public class RopeCommand extends BaseCommand{
 	    	}
 		} else {
 			ropePull.stop();
+		
 		}
 	}
 	

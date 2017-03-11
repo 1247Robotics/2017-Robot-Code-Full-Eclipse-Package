@@ -5,7 +5,6 @@ import org.usfirst.frc.team1247.robot.commands.LightCommand;
 
 import com.ctre.CANTalon;
 
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Light extends Subsystem{

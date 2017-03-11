@@ -3,6 +3,7 @@ package org.usfirst.frc.team1247.robot;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.Joystick;
 
+import org.usfirst.frc.team1247.robot.utilities.ADIS16448_IMU;
 import org.usfirst.frc.team1247.robot.utilities.Mode;
 
 
@@ -17,7 +18,7 @@ public class OI {
 	public RumbleType kRightRumble;
 	
 	Joystick xboxDriveJoystick;
-	int angle = 0;
+	double angle = 0;
 	
 	
 	
@@ -65,7 +66,7 @@ public class OI {
 		System.out.println(direction);
 	} //called in MecanumDrive.java!!!!
 	
-	public int getAngle() {
+	public double getAngle() {
 		switch(direction){
 		case GEAR:
 			angle = 0;
@@ -154,5 +155,6 @@ public class OI {
 		}
 		return pressed;
 	}
-
 }
+
+

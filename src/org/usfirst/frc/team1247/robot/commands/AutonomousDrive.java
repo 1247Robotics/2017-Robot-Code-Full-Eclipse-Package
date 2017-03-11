@@ -24,7 +24,7 @@ public class AutonomousDrive extends BaseCommand{
 		requires(driveTrain);
 	}
 	
-		public AutonomousDrive(double speed, double duration) {
+	public AutonomousDrive(double speed, double duration) {
 			this.speedX = speed;
 			this.speedY = speed;
 			this.rotation = speed;
@@ -50,7 +50,7 @@ public class AutonomousDrive extends BaseCommand{
 			isDriving = true;
 		}
 		
-		if (timer.get() < duration) driveTrain.mecanumDrive(0, 1, 0, oi.getAngle());
+		if (timer.get() < duration) driveTrain.mecanumDrive(this.speedX, this.speedY, this.rotation, oi.getAngle());
 		else isFinished = true;
 	}
 

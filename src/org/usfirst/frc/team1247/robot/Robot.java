@@ -3,16 +3,14 @@ package org.usfirst.frc.team1247.robot;
 
 import org.usfirst.frc.team1247.robot.commands.AutonomousMode;
 import org.usfirst.frc.team1247.robot.commands.BaseCommand;
-import org.usfirst.frc.team1247.robot.commands.PixyDuinoCommand;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 
 
@@ -26,14 +24,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static OI oi;
 	AutonomousMode autonomousMode;
-    //ADIS16448_IMU imu;
-    PixyDuinoCommand pixy;
+    //PixyDuinoCommand pixy;
 	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
-	//Sendable mode = new Sendable();
 	
 	
 
@@ -53,8 +49,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		BaseCommand.init();
 		autonomousMode = new AutonomousMode();
-        //imu = new ADIS16448_IMU();
-        pixy = new PixyDuinoCommand();
+        //pixy = new PixyDuinoCommand();
         /*
         System.out.println(imu.getAngleX());
         System.out.println(imu.getAngleY());
